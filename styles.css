@@ -1504,6 +1504,56 @@ button {
   .section-padding {
     padding: 4.5rem 0;
   }
+
+  /* ==========================================================================
+     MOBILE ROOMS SECTION FIX (320px - 768px)
+     ========================================================================== */
+  #rooms {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  #rooms .container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .room-card-premium {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .room-img-container,
+  .room-slider-wrapper,
+  .room-slide-image,
+  .room-gallery-placeholder {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .room-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /* Mobile Nav Drawer */
