@@ -1,0 +1,24 @@
+{
+  "name": "New Ram Niwas Lodging House",
+  "short_name": "Ram Niwas Lodge",
+  "description": "Premium city lodging in Andheri East, Mumbai. Next to Pinky Theater, near Metro & Airport.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

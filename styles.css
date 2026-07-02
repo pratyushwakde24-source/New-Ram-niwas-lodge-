@@ -1,0 +1,1568 @@
+/* ==========================================================================
+   NEW RAM NIWAS LODGING HOUSE - DARK LUXURY DESIGN SYSTEM
+   Inspired by Apple, The Oberoi, Airbnb & Booking.com Premium
+   ========================================================================== */
+
+:root {
+  /* Dark Luxury Color Palette */
+  --bg-main: #090909;
+  /* Ultra Dark Apple Background */
+  --bg-secondary: #161616;
+  /* Sleek Secondary Surface */
+  --bg-tertiary: #1f1f1f;
+  /* Elevated Card Surface */
+  --bg-card-hover: #262626;
+
+  --gold-primary: #d4af37;
+  /* Warm Luxury Gold */
+  --gold-light: #f3e5ab;
+  --gold-dark: #997a15;
+  --gold-glow: rgba(212, 175, 55, 0.18);
+
+  --text-main: #f5f5f7;
+  /* Crisp Apple White */
+  --text-muted: #a1a1a6;
+  /* Elegant Muted Gray */
+  --text-dim: #6e6e73;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(212, 175, 55, 0.4);
+
+  /* Verified & Notice Badges */
+  --verified-bg: rgba(16, 185, 129, 0.12);
+  --verified-text: #34d399;
+  --verified-border: rgba(16, 185, 129, 0.3);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadows & Glassmorphism */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.25);
+
+  --glass-bg: rgba(22, 22, 22, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(16px);
+
+  /* Layout & Corners */
+  --max-width: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+
+  --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-main);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  color: var(--text-main);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (GLASSMORPHISM)
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  transition: all var(--transition);
+}
+
+.navbar.scrolled {
+  background: rgba(15, 15, 15, 0.95);
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 86px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo-icon {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #161616 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+  font-size: 1.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.logo-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.nav-item {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.5rem 0;
+  letter-spacing: 0.02em;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: all var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--gold-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-primary) 0%, #b89728 100%);
+  color: #090909;
+  box-shadow: var(--shadow-gold);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #e5c158 0%, var(--gold-primary) 100%);
+}
+
+.btn-outline-gold {
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold-primary);
+  color: #090909;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+  font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+}
+
+.mobile-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  padding: 0.5rem;
+}
+
+/* ==========================================================================
+   HERO SECTION (DARK LUXURY WITH APPLE/OBEROI INSPIRATION)
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0;
+  overflow: hidden;
+  background: #040404;
+}
+
+.hero-bg-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 9, 9, 0.6) 0%, rgba(9, 9, 9, 0.8) 50%, var(--bg-main) 100%),
+    radial-gradient(circle at center, transparent 30%, rgba(9, 9, 9, 0.85) 100%);
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.1);
+  transform: scale(1.05);
+  transition: transform 10s ease-out;
+}
+
+.hero:hover .hero-bg-image {
+  transform: scale(1);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(22, 22, 22, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--gold-primary);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-title span.gold-text {
+  color: var(--gold-primary);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.hero-stats-bar {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  background: rgba(22, 22, 22, 0.75);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   SECTION HEADERS & COMMON LUXURY LAYOUTS
+   ========================================================================== */
+.section-padding {
+  padding: 7.5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--gold-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   SECTION 1: ABOUT (APPLE & OBEROI INSPIRED PROFESSIONAL COPY)
+   ========================================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-text-content h3 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.about-text-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.highlight-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.highlight-card:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.highlight-icon {
+  color: var(--gold-primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.highlight-card h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+}
+
+.highlight-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-visual-box {
+  position: relative;
+}
+
+.luxury-frame {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-image-slot {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(145deg, #1f1f1f 0%, #111111 100%);
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-image-slot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.slot-icon {
+  font-size: 3.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.slot-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.slot-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+.slot-badge {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ==========================================================================
+   SECTION 2: VERIFIED ROOMS (AIRBNB/BOOKING PREMIUM CARDS)
+   ========================================================================== */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.room-card-premium {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+
+.room-card-premium:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-gold);
+}
+
+.room-img-container {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #111111;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.room-category-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  background: rgba(9, 9, 9, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+}
+
+.room-slider-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Elegant Placeholder Styling when Real Photos are Unavailable */
+.room-gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition);
+}
+
+.room-img-container:hover .room-gallery-placeholder {
+  transform: scale(1.03);
+}
+
+.room-gallery-placeholder .placeholder-icon {
+  font-size: 2.25rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.room-gallery-placeholder .placeholder-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.room-gallery-placeholder .placeholder-message {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+}
+
+/* Image Slider & Visual Effects */
+.room-slide-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1);
+  will-change: opacity, transform;
+}
+
+.room-slide-image.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Slight zoom on hover - subtle effect */
+.room-img-container:hover .room-slide-image.active {
+  transform: scale(1.05);
+}
+
+/* Soft dark gradient overlay */
+.room-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 9, 9, 0.1) 0%, rgba(9, 9, 9, 0.25) 50%, rgba(9, 9, 9, 0.7) 100%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity var(--transition);
+}
+
+.room-img-container:hover .room-gradient-overlay {
+  opacity: 0.85;
+}
+
+.room-content {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.room-header h3 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.room-verified-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--verified-text);
+  background: var(--verified-bg);
+  border: 1px solid var(--verified-border);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.room-specs-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--gold-primary);
+  font-weight: 500;
+}
+
+.room-specs-bar span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.room-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.room-amenities-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.amenity-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+
+.amenity-tag i {
+  color: var(--gold-primary);
+}
+
+.room-action-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-title {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.price-value {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   SECTION 3: AMENITIES (VERIFIED ICON GRID)
+   ========================================================================== */
+.amenities-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.amenities-grid-luxury {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75rem;
+}
+
+.amenity-luxury-card {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.amenity-luxury-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.amenity-icon-circle {
+  width: 64px;
+  height: 64px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin: 0 auto 1.25rem;
+}
+
+.amenity-luxury-card h4 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.amenity-luxury-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.verification-notice-banner {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--text-main);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.verification-notice-banner i {
+  font-size: 1.75rem;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECTION 4: GALLERY (RESPONSIVE MASONRY WITH LIGHTBOX)
+   ========================================================================== */
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 1.75rem;
+}
+
+@media (max-width: 1024px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition);
+  cursor: pointer;
+  display: block;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.masonry-placeholder-card {
+  padding: 2.5rem 1.75rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.masonry-placeholder-card.tall {
+  min-height: 380px;
+}
+
+.masonry-placeholder-card.medium {
+  min-height: 290px;
+}
+
+.masonry-placeholder-card.short {
+  min-height: 230px;
+}
+
+.masonry-placeholder-card i {
+  font-size: 2.75rem;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.masonry-placeholder-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.masonry-placeholder-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.masonry-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--gold-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 4, 4, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content-box {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  max-width: 750px;
+  width: 100%;
+  padding: 3rem;
+  position: relative;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform var(--transition);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-modal.active .lightbox-content-box {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  color: var(--text-main);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.lightbox-close:hover {
+  background: var(--gold-primary);
+  color: #090909;
+}
+
+/* ==========================================================================
+   SECTION 5: NEARBY ATTRACTIONS (INTERACTIVE CARDS)
+   ========================================================================== */
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.nearby-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nearby-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-tertiary);
+}
+
+.nearby-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.nearby-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.nearby-dist-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nearby-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.nearby-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 6: LOCATION (EMBEDDED GOOGLE MAP & DIRECTIONS)
+   ========================================================================== */
+.location-section {
+  background: #050505;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.location-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.location-info-col h3 {
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.location-info-col p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.address-luxury-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2.5rem;
+}
+
+.address-luxury-card h4 {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.address-luxury-card p {
+  color: var(--text-main);
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.map-container-luxury {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 440px;
+}
+
+.map-container-luxury iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+/* ==========================================================================
+   SECTION 7: CONTACT & INSTANT BOOKING
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-details-col {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+}
+
+.contact-details-col h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item-luxury {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon-gold {
+  width: 52px;
+  height: 52px;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.contact-text-gold h5 {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.contact-text-gold a,
+.contact-text-gold p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.contact-text-gold a:hover {
+  color: var(--gold-primary);
+}
+
+.booking-form-luxury {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.booking-form-luxury h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form-luxury p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.95rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--gold-primary);
+  background: #1a1a1a;
+  box-shadow: 0 0 0 3px var(--gold-glow);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 1.15rem;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   FOOTER (APPLE/THE OBEROI SLEEK FOOTER)
+   ========================================================================== */
+.footer {
+  background: #040404;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5rem 0 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.footer-about p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 1.25rem;
+  max-width: 340px;
+  line-height: 1.7;
+}
+
+.footer-col h4 {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-links a {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--gold-primary);
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.footer-disclaimer {
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+
+  .about-grid,
+  .location-wrapper,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero {
+    padding: 4rem 0;
+    min-height: 75vh;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  .section-padding {
+    padding: 4.5rem 0;
+  }
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 86px;
+  left: 0;
+  right: 0;
+  background: rgba(15, 15, 15, 0.98);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  transform: translateY(-150%);
+  transition: transform var(--transition);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-nav-drawer.active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   PRODUCTION SEO, ACCESSIBILITY & PERFORMANCE HARDENING
+   ========================================================================== */
+/* Visible Focus Rings for Keyboard Navigation (WCAG AA Compliance) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold-primary) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25) !important;
+}
+
+/* GPU Acceleration for Performance (Lighthouse 95+ Smoothness) */
+.gsap-reveal,
+.room-card-premium,
+.amenity-card-luxury,
+.nearby-card {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Honeypot Spam Protection Field */
+.hp-field-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  height: 0 !important;
+  width: 0 !important;
+  z-index: -1 !important;
+}
