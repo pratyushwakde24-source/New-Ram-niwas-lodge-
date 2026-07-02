@@ -18,7 +18,7 @@ Keyword density and semantic targeting were naturally integrated into primary pa
 *   **Targeted Keywords:** *Hotel in Andheri East*, *Lodging House Mumbai*, *Hotel near Andheri Metro*, *Hotel near Mumbai Airport*, *Budget Hotel Andheri East*, *Affordable Stay Mumbai*.
 *   **Title Tag:** `New Ram Niwas Lodging House | Hotel in Andheri East, Mumbai` (Optimized within 60 characters for SERP display).
 *   **Meta Description:** Optimized to 160 characters with clear value proposition and call-to-action (350m from Metro, near Mumbai Airport, 24x7 reception, AC rooms).
-*   **Robots & Canonical:** Configured `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1` and set strict canonical URL pointing to `https://newramniwaslodging.com/`.
+*   **Robots & Canonical:** Configured `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1` and set strict canonical URL pointing to `https://new-ram-niwas-lodge.vercel.app/`.
 
 ### 1.2 Structured Data (5x JSON-LD Schemas)
 Embedded a consolidated `@graph` array inside `<script type="application/ld+json">` in `<head>` containing five distinct rich result schemas:
